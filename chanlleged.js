@@ -145,7 +145,7 @@ const nameOfStudents = () => {
 // 4.Eliminar el último alumno de la clase
 const deleteLastStudent = () => {
   console.table(students.pop());
-  console.log(`Has eliminado al último usuario de la lista`)
+  console.log(`Has eliminado al último usuario de la lista`);
 }
 
 // 5.Eliminar un alumno aleatorio
@@ -230,7 +230,27 @@ const averageAgeGirls = () => {
 
 // 14. Añadir nueva nota a los alumnos
 const addNotes = () => {
-  randomNum = Math.floor(Math.random() * 10) + 1;
+  const addNote = students.map((student) => {
+    student.push({
+        examScores: Math.floor(Math.random() * 10),
+        student
+    })
+  });
+console.log(addNote);
+  
+}
+
+// 15. Ordenar los alumnos alfabéticamente
+const sortNames = () => {
+  const names = students.sort(function(a, b){
+    let nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+    if (nameA < nameB) //sort string ascending
+     return -1;
+    if (nameA > nameB)
+     return 1;
+    return 0; //default return value (no sorting)
+   });
+   console.log(names);
 }
 
 
@@ -307,8 +327,10 @@ async function showPossibleOptions() {
         averageAgeGirls();
         break;
       case 14:
+        addNotes();
         break;
       case 15:
+        sortNames();
         break;
       default:
         console.log('Número no válido')
