@@ -150,6 +150,11 @@ const deleteLastStudent = () => {
 
 // 5.Eliminar un alumno aleatorio
 const ramdomStudent = () => {
+  while(students.length) {
+    const random = Math.floor(Math.random() * students.length);
+    const el = students.splice(random, 1)[0];
+    console.log(el);
+  }
   
 }
 
@@ -194,7 +199,7 @@ const addDatas = () => {
 
   
 
-  console.log(`El nombre introducido aleatoriamente es ${}`);
+  console.log(`El nombre introducido aleatoriamente es `);
       
 }
 
@@ -202,8 +207,32 @@ const addDatas = () => {
 
 // 11. Mostrar el nombre de la persona más joven.
 const youngestStudent = () => {
-
+  const lowest = students.reduce((previous, current) => {
+    return current.age < previous.age ? current : previous;
+  });
+  
+  console.log('El estudante mas jovén es: ', lowest);
 }
+
+// 12. Mostrar la edad media de los alumnos
+const averageAge = () => {
+  const average = students.reduce((total, next) => total + next.age, 0) / students.length;
+  console.log('La edad media de los estudiantes es:', Math.round(average));
+}
+
+// 13. Mostrar la edad media de todas las chicas de la clase
+const averageAgeGirls = () => {
+  const females = students.filter(girls => girls.gender === 'female');
+  const average = females.reduce((total, next) => total + next.age, 0) / females.length;
+
+  console.log('La edad media de las chicas de la clase es:', Math.round(average));
+}
+
+// 14. Añadir nueva nota a los alumnos
+const addNotes = () => {
+  randomNum = Math.floor(Math.random() * 10) + 1;
+}
+
 
 //Mostrar menu y elegir una opción
 async function showPossibleOptions() {
@@ -272,8 +301,10 @@ async function showPossibleOptions() {
         youngestStudent();
         break;
       case 12:
+        averageAge();
         break;
       case 13:
+        averageAgeGirls();
         break;
       case 14:
         break;
