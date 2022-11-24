@@ -15,67 +15,7 @@ const students = [{
     examScores: [],
     gender: 'female',
     name: 'Silvia'
-  },
-  {
-    age: 23,
-    examScores: [],
-    gender: 'female',
-    name: 'Lola'
-  },
-  {
-    age: 27,
-    examScores: [],
-    gender: 'male',
-    name: 'Marcos'
-  },
-  {
-    age: 28,
-    examScores: [],
-    gender: 'male',
-    name: 'Manuel'
-  },
-  {
-    age: 33,
-    examScores: [],
-    gender: 'male',
-    name: 'Luca'
-  },
-  {
-    age: 31,
-    examScores: [],
-    gender: 'female',
-    name: 'Ana'
-  },
-  {
-    age: 33,
-    examScores: [],
-    gender: 'female',
-    name: 'Irene'
-  },
-  {
-    age: 34,
-    examScores: [],
-    gender: 'female',
-    name: 'Alba'
-  },
-  {
-    age: 26,
-    examScores: [],
-    gender: 'male',
-    name: 'Oliver'
-  },
-  {
-    age: 24,
-    examScores: [],
-    gender: 'male',
-    name: 'Luis'
-  },
-  {
-    age: 22,
-    examScores: [],
-    gender: 'female',
-    name: 'Carmen'
-  },
+  }
   ]
   
 const availableMaleNames = ['Edu', 'Pepe', 'Juan', 'Victor', 'Leo', 'Francisco', 'Carlos'];

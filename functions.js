@@ -123,11 +123,12 @@ console.log('La edad media de las chicas de la clase es:', Math.round(average));
 }
 
 // 14. Añadir nueva nota a los alumnos
-const addNotes = (student) => {
-    for(let i = 0; i < student.length; i++) {
-        student[i].examScores.push(Math.floor(Math.random() * 11));
+const addNotes = () => {
+    const note = students;
+    for(let i = 0; i < note.length; i++) {
+        note[i].examScores.push(Math.floor(Math.random() * 10));
     }
-    return student;
+    console.log(note);
 }
 
 // 15. Ordenar los alumnos alfabéticamente
