@@ -39,17 +39,15 @@ const rl = readline.createInterface({
   //Pedir un número por consola y comprobar que sea un número
   function getNumberFromConsole() {
     const promise = new Promise((resolve, reject) => { 
-            rl.question('Introduce el número: ', (num) => {
-                rl.pause();
-                if (isInt(num)) {
-                    num = Number.parseInt(num);
-                    resolve(num);
-  
-                    
-                } else {
-                    reject('Has de introducir un número');
-                }
-            });
+      rl.question('*********************\nIntroduce una opción:\n\t', (num) => {
+        rl.pause();
+        if (isInt(num) && num > 0) {
+          num = Number.parseInt(num);
+          resolve(num);
+        } else {
+          reject('Has de introducir una opción entre 1 y 15');
+        }
+      });
     });
     
     return promise;
@@ -60,6 +58,9 @@ const rl = readline.createInterface({
   
   //Mostrar menu y elegir una opción
   function showPossibleOptions() {
+    console.log('=====================')
+    console.log('OPCIONES DISPONIBLES');
+    console.log('=====================\n\t')
     console.log('1- Mostrar en formato de tabla todos los alumnos.');
     console.log('2- Mostrar por consola la cantidad de alumnos que hay en clase.');
     console.log('3- Mostrar por consola todos los nombres de los alumnos.');
@@ -74,7 +75,7 @@ const rl = readline.createInterface({
     console.log('12- Mostrar por consola la edad media de todos los alumnos de la clase.');
     console.log('13- Mostrar por consola la edad media de las chicas de la clase.');
     console.log('14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.');
-    console.log('15- Ordenar el array de alumnos alfabéticamente según su nombre.');
+    console.log('15- Ordenar el array de alumnos alfabéticamente según su nombre.\n\t');
   }
   
   async function showOptions() {
@@ -91,13 +92,8 @@ const rl = readline.createInterface({
           process.exit(0)
       }
   
-      if(numberFromConsole === 0) {
-        console.log('Número incorrecto! Debe de ser un número entre 1 y 15')
-        rl.close()
-  
-      }
-  
       switch(numberFromConsole) {
+        
         case 1:
           showTables();
           break;

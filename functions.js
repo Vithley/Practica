@@ -74,9 +74,11 @@ let rangeStudent = students.filter(function(el) {
 console.table(rangeStudent);
 }
 
+// Creo una función para calcular la edad entre 20 y 50
 function numeroAleatorio(min, max) {
 return Math.round(Math.random() * (max - min) + min);
 }
+
 // 10.Añadir un alumno nuevo con datos
 const addDatas = () => {
 let randomName;
@@ -94,9 +96,7 @@ let newItem = {
             "name": randomName 
             };
 students.push(newItem);
-console.log(newItem);
-
-    
+console.log(newItem);    
 }
 
 // 11. Mostrar el nombre de la persona más joven.
