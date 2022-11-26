@@ -16,7 +16,8 @@ import {
     averageAge,
     averageAgeGirls,
     addNotes, 
-    sortNames
+    sortNames,
+   
 } from "./functions.js";
 
 
@@ -76,6 +77,10 @@ const rl = readline.createInterface({
     console.log('13- Mostrar por consola la edad media de las chicas de la clase.');
     console.log('14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.');
     console.log('15- Ordenar el array de alumnos alfabéticamente según su nombre.\n\t');
+    console.log('16- Mostrar por consola el alumno de la clase con las mejores notas.');
+    console.log('17- Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.');
+    console.log('18- Añadir un punto extra a cada nota existente de todos los alumnos.\n\t');
+
   }
   
   async function showOptions() {
@@ -139,13 +144,22 @@ const rl = readline.createInterface({
         case 15:
           sortNames();
           break;
+        case 16:
+          
+          break;
+        case 17:
+          break;
+        case 18:
+          break;
         default:
-          console.log('Número no válido')
+          console.log('====================');
+          console.log('  Número no válido');
+          console.log('====================');
           rl.close();
           break;
       }
       
-    }  while (numberFromConsole <= 15)
+    }  while (numberFromConsole <= 18)
   }
   
   showOptions();

@@ -35,8 +35,8 @@ console.log(`Has eliminado al último usuario de la lista`);
 const ramdomStudent = () => {
 while(students.length) {
     const random = Math.floor(Math.random() * students.length);
-    const el = students.splice(random, 1)[0];
-    console.log(el);
+    const alumn = students.splice(random, 1)[0];
+    console.table(alumn);
 }
 
 }
@@ -46,7 +46,7 @@ const femaleStudents = () => {
 let femaleStudent = students.filter(function(el) {
     return(el.gender === 'female')
 });
-console.log(femaleStudent);
+console.table(femaleStudent);
 }
 
 // 7.Mostrar por consola el número de chicos y chicas que hay en la clase.
@@ -63,7 +63,7 @@ console.log(`El numero de chicos es ${totalMale}\nEl número total de chicas es 
 // 8. Mostrar true o false por consola si todos los alumnos de la clase son chicas.
 const femaleStudentsTrue = () => {
 const allFemales = students.every(student => student.gender === 'female');
-console.log(allFemales);
+console.log(`¿Son todos los alumnos de la clase chicas?\n ${allFemales}`);
 
 }
 // 9. Mostrar los alumnos que que tengan entre 20 y 25 años
@@ -96,7 +96,7 @@ let newItem = {
             "name": randomName 
             };
 students.push(newItem);
-console.log(newItem);    
+console.table(newItem);    
 }
 
 // 11. Mostrar el nombre de la persona más joven.
@@ -105,7 +105,8 @@ const lowest = students.reduce((previous, current) => {
     return current.age < previous.age ? current : previous;
 });
 
-console.log('El estudante mas jovén es: ', lowest);
+console.log('El estudante mas jovén es: ');
+console.table(lowest);
 }
 
 // 12. Mostrar la edad media de los alumnos
@@ -128,7 +129,7 @@ const addNotes = () => {
     for(let i = 0; i < note.length; i++) {
         note[i].examScores.push(Math.floor(Math.random() * 10));
     }
-    console.log(note);
+    console.table(note);
 }
 
 // 15. Ordenar los alumnos alfabéticamente
@@ -141,7 +142,17 @@ const names = students.sort(function(a, b){
     return 1;
     return 0; //default return value (no sorting)
     });
-    console.log(names);
+    console.table(names);
+}
+
+// Sumar las notas de los alumnos
+const sumNotes = () => {
+    
+}
+
+// 16. Mostrar por consola el alumno de la clase con las mejores notas.
+const bestStudent = () => {
+   
 }
 
 export {
@@ -159,5 +170,6 @@ export {
     averageAge,
     averageAgeGirls,
     addNotes, 
-    sortNames
+    sortNames,
+   
 };
